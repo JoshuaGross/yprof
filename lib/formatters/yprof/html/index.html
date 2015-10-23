@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head><title>yprof trace information</title></head>
+  <link rel="stylesheet" href="smoothness.jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="jquery-ui.min.css" />
+  <link rel="stylesheet" type="text/css" href="jquery-ui.structure.min.css" />
+  <link rel="stylesheet" type="text/css" href="jquery-ui.theme.min.css" />
+  <script type="text/javascript" src="handlebars-v3.0.3.js"></script>
+  <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="jquery-ui.min.js"></script>
+  <script type="text/javascript" src="instance-globals.js"></script>
+  <script type="text/javascript" src="bundle.js"></script>
+  <link rel="stylesheet" type="text/css" href="frontend.css" />
+  <body>
+    <div id="template" style="display: none">
+      <form action="#" method="get">
+        <div id="tabs">
+          <ul>
+            <li><a href="#overview">Overview &amp; options</a></li>
+            <li><a href="#raw-callgraph-container">Raw callgraphs</a></li>
+            <li><a href="#raw-flatcalls-container">Raw flat calls</a></li>
+            <li><a href="#raw-sourcedict-container">Raw source dictionary</a></li>
+          </ul>
+
+          <div id="overview">
+            <h1>Overview</h1>
+            Elapsed total time: {{elapsedTimeTotal}}
+
+            <h2>Options</h2>
+            <fieldset>
+              <label for="collapseModuleLoadFrames">
+                <h3>Collapse module load frames</h3>
+                {{checkbox "collapseModuleLoadFrames" "true" collapseModuleLoadFrames}} Collapse module load frames
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <label for="collapseFrame">
+                <h3>Collapse frames (custom)</h3>
+                <p>Enter each frame on its own line:</p>
+                <textarea id="collapseFrame" style="width: 50%; height: 10em">{{collapseFrameText}}</textarea>
+              </label>
+            </fieldset>
+          </div>
+
+          <div id="raw-flatcalls-container">
+            <h1>Raw Flat Calls</h1>
+            <h2>Flat calls</h2>
+            <pre>{{rawFlatCalls}}</pre>
+          </div>
+
+          <div id="raw-sourcedict-container">
+            <h1>Raw Source Dictionary</h1>
+            <h2>Source dictionary</h2>
+            <pre>{{rawSourceDict}}</pre>
+          </div>
+
+          <div id="raw-callgraph-container">
+            <h1>Raw Callgraph</h1>
+            <h2>Options</h2>
+
+            <fieldset>
+              <label for="hideCallRecords">
+                <h3>Hide call records</h3>
+                {{checkbox "hideCallRecords" "true" hideCallRecords}} Hide call records
+              </label>
+            </fieldset>
+
+            <h2>Callgraph</h2>
+            <pre>{{rawCallGraph}}</pre>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
