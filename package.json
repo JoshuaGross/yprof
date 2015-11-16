@@ -11,7 +11,7 @@
     "glob": "^5.0.13",
     "handlebars-form-helpers": "^0.1.3",
     "html2hscript": "^1.0.6",
-    "inliner": "git+ssh://git@github.com:JoshuaGross/inliner.git#jgross-update-uglify",
+    "inliner": "1.5.0",
     "mkdirp": "^0.5.1",
     "node-hook": "^0.1.0",
     "performance-now": "^0.2.0",
